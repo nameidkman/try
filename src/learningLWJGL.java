@@ -1,5 +1,7 @@
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL;
+
+
 import org.lwjgl.opengl.GL11;
 
 public class learningLWJGL {
@@ -7,15 +9,7 @@ public class learningLWJGL {
     public static void main(String [] a){
 
 
-        /*
-         =====================================================================================================================================
-         GLFW.glfwCreateWindow(); in this there are main 5 parameter which are use
-         there is width for the window the height for it and then the title for it
-         after that there is the monitor and that just means that which monitor it is going to go on
-         and usually it is going to be zero as it is just going to go on the primary monitor
-         at last there is the share and that means that would you like to share (texture, buffer and other stuff)with the opengl or not
-         =====================================================================================================================================
-        */
+
 
         if(!GLFW.glfwInit()){
             System.err.println("GLFW initialization failed");
@@ -52,7 +46,22 @@ public class learningLWJGL {
          */
         GLFW.glfwWindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);
 
+
+
+        /*
+         =====================================================================================================================================
+         GLFW.glfwCreateWindow(); in this there are main 5 parameter which are use
+         there is width for the window the height for it and then the title for it
+         after that there is the monitor and that just means that which monitor it is going to go on
+         and usually it is going to be zero as it is just going to go on the primary monitor
+         at last there is the share and that means that would you like to share (texture, buffer and other stuff)with the opengl or not
+         =====================================================================================================================================
+        */
+
+
         long window = GLFW.glfwCreateWindow(800, 600, "Hello World", 0, 0);
+
+
         if(window == 0){
             System.err.println("GLFW window creation failed");
         }
@@ -60,11 +69,11 @@ public class learningLWJGL {
 
         // this is to make the contex window which is there
         GLFW.glfwMakeContextCurrent(window);
-        
+
         /*
          ======================================================================================
          This is here for enabling v-sync.
-         So what is v-sync? 
+         So what is v-sync?
          V-sync is basically a visual artifact where two parts of the frame are displayed together.
          This usually happens when the graphics card outputs a new frame before the monitor finishes
          displaying the previous one.
@@ -79,6 +88,9 @@ public class learningLWJGL {
 
         // this is for initialize opengl
         GL.createCapabilities();
+
+
+
 
         // this is the main rendering loop for the window
         while(!GLFW.glfwWindowShouldClose(window)){
@@ -109,6 +121,7 @@ public class learningLWJGL {
 
 
     }
+
 
 
 }
